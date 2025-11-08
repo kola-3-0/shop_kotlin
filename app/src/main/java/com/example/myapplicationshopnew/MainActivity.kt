@@ -18,7 +18,7 @@ class MainActivity : AppCompatActivity() {
         val btnStart = findViewById<Button>( R.id.buttonStart)
         btnStart.setOnClickListener {
            // Toast.makeText(this, "кнопка нажата", Toast.LENGTH_SHORT).show()
-            val intent = Intent(this, secondActivity :: class.java)
+            val intent = Intent(this, SecondActivity::class.java)
             startActivity(intent)
         }
 
