@@ -12,7 +12,10 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.MyApplicationShopNew">
         <activity
-            android:name=".secondActivity"
+            android:name=".DetailActivity"
+            android:exported="false" />
+        <activity
+            android:name=".SecondActivity"
             android:exported="false" />
         <activity
             android:name=".MainActivity"
