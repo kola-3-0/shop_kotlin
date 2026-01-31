@@ -5,7 +5,7 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#E0E3EF"
+    android:background="@color/background_main"
     android:gravity="center"
     android:orientation="vertical"
     android:padding="15dp"
@@ -25,7 +25,7 @@
         android:background="#9DF0A1"
         android:gravity="center"
         android:rotationX="6"
-        android:text="Добро пожаловать в NOBILIS "
+        android:text="@string/welcome_text"
         android:textSize="20sp"
         android:textStyle="bold" />
 

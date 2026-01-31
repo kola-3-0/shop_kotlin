@@ -9,6 +9,17 @@
     android:orientation="vertical"
     android:padding="16dp"
     >
+
+    <com.google.android.material.appbar.MaterialToolbar
+        android:id="@+id/topBar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:title="каталог"
+        android:elevation="4dp"
+        android:background="#501D1D"
+    />
+
+
     <ListView
         android:id="@+id/lvCatalog"
         android:layout_width="match_parent"

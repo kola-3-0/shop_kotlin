@@ -1,6 +1,7 @@
 package com.example.myapplicationshopnew
 
 import Product
+import android.content.Intent
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -23,12 +24,32 @@ class ProductGridAdapter(
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): VH {
-        val view = LayoutInflater.from(perent.context)
-            .inflate(R.layout.item_product_grid, perent, false)
+        val view = LayoutInflater.from(parent.context)
+            .inflate(R.layout.item_product_grid, parent, false)
         return VH(view)
     }
 
     override fun getItemCount() = products.size
+    override fun onBindViewHolder(holder: VH, position: Int) {
+        val product = products[position]
+
+        holder.image.setImageResource(product.ImageRes)
+        holder.name.text = product.name
+        holder.price.text = "${product.price} $"
+
+        holder.button.setOnClickListener {
+            val intent = Intent(context, DetailActivity2::class.java).apply {
+                putExtra("name", product.name)
+                putExtra("peice", product.price)
+                putExtra("ImageRes", product.ImageRes)
+                putExtra("description", product.description)
+
+            }
+            context.startActivity(intent)
+        }
+
+    }
+
 
 
 }
