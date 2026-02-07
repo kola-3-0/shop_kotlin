@@ -1,5 +1,6 @@
 package com.example.myapplicationshopnew
 
+import Product
 import android.os.Bundle
 import android.widget.Button
 import android.widget.ImageView
@@ -21,6 +22,7 @@ class DetailActivity2 : AppCompatActivity() {
         val productPrice = intent.getDoubleExtra("price", 0.0)
         val productImageRes = intent.getIntExtra("ImageRes", 0)
         val productDescription = intent.getStringExtra("description") ?: "Описание отсутствует"
+        val productId = intent.getIntExtra("id", -1)
 
 //      Находим view на экране
         val detailImage = findViewById<ImageView>(R.id.detailImage)
@@ -36,6 +38,12 @@ class DetailActivity2 : AppCompatActivity() {
         detailDescription.text = productDescription
 
         buyButton.setOnClickListener {
+            val one_new_prodect = Product(id = productId,
+                                          name = productName,
+                                          price = productPrice,
+                                          description = productDescription,
+                                          ImageRes = productImageRes  )
+            CartStorage.add_item(new_item = one_new_prodect)
             Toast.makeText(this, "товар $productName добавлен в корзину!", Toast.LENGTH_SHORT)
                 .show()
         }
