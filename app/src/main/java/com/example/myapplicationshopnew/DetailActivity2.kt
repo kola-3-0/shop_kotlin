@@ -10,6 +10,7 @@ import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
+import com.example.myapplicationshop.model.CartStorage
 
 class DetailActivity2 : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -19,7 +20,7 @@ class DetailActivity2 : AppCompatActivity() {
 
 //      Получение данных из intent
         val productName = intent.getStringExtra("name") ?: "Товар"
-        val productPrice = intent.getDoubleExtra("price", 0.0)
+        val productPrice = intent.getDoubleExtra("peice", 0.0)
         val productImageRes = intent.getIntExtra("ImageRes", 0)
         val productDescription = intent.getStringExtra("description") ?: "Описание отсутствует"
         val productId = intent.getIntExtra("id", -1)
