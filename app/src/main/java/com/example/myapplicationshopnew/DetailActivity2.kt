@@ -44,7 +44,7 @@ class DetailActivity2 : AppCompatActivity() {
                                           price = productPrice,
                                           description = productDescription,
                                           ImageRes = productImageRes  )
-            CartStorage.add_item(new_item = one_new_prodect)
+            CartStorage.add_item(this, new_item = one_new_prodect)
             Toast.makeText(this, "товар $productName добавлен в корзину!", Toast.LENGTH_SHORT)
                 .show()
         }

@@ -8,6 +8,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.content.Intent
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
+import com.example.myapplicationshop.model.CartStorage
 
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -15,6 +16,7 @@ class MainActivity : AppCompatActivity() {
         enableEdgeToEdge()
         setContentView(R.layout.activity_main)
 
+        CartStorage.init(this)
         val btnStart = findViewById<Button>( R.id.buttonStart)
         btnStart.setOnClickListener {
            // Toast.makeText(this, "кнопка нажата", Toast.LENGTH_SHORT).show()

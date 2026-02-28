@@ -39,6 +39,7 @@ class ProductGridAdapter(
 
         holder.button.setOnClickListener {
             val intent = Intent(context, DetailActivity2::class.java).apply {
+                putExtra("id", product.id)
                 putExtra("name", product.name)
                 putExtra("peice", product.price)
                 putExtra("ImageRes", product.ImageRes)

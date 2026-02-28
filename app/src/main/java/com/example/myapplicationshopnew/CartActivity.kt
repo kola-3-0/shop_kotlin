@@ -35,10 +35,11 @@ class CartActivity : AppCompatActivity() {
 
     //5
     btnClear.setOnClickListener {
-        CartStorage.clear()
+        CartStorage.clear(this)
         rv.adapter = CartAdapter(emptyList())
-    }
         tvTotal.text = "ИТОГО: 0"
+    }
+
 
 
 
