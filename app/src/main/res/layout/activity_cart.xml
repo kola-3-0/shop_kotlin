@@ -33,9 +33,29 @@
         android:paddingTop="12dp"/>
 
     <Button
-        android:id="@+id/btnClearCart"
+        android:id="@+id/btnMakeOrder"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="ОЧИСТИТЬ КОРЗИНУ"/>
+        android:text="ОФОРМИТЬ ЗАКАЗ"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <Button
+    android:id="@+id/btnClearCart"
+    android:layout_width="0dp"
+            android:layout_weight="1"
+    android:layout_height="wrap_content"
+    android:text="ОЧИСТИТЬ КОРЗИНУ"/>
+
+        <Button
+            android:id="@+id/btnOoenHistory"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:text="ОТКРЫТЬ ИСТОРИЮ"/>
+</LinearLayout>
+
 
 </LinearLayout>

@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="20dp"
+    android:background="#501D1D">
+
+    <TextView
+        android:id="@+id/tvHistoryTitly"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="ИСТОРИЯ ПОКУПОК"
+        android:textSize="24dp"
+        android:textAlignment="center"
+        android:layout_marginBottom="15dp"
+        />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rvHistory"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        />
+
+
+</LinearLayout>

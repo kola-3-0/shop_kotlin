@@ -9,12 +9,14 @@ import android.content.Intent
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import com.example.myapplicationshop.model.CartStorage
+import com.example.myapplicationshopnew.model.HistoryStorage
 
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
         setContentView(R.layout.activity_main)
+        HistoryStorage.init(this)
 
         CartStorage.init(this)
         val btnStart = findViewById<Button>( R.id.buttonStart)
