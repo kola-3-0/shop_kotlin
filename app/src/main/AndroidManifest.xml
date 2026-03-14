@@ -11,6 +11,10 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.MyApplicationShopNew">
+
+        <activity
+            android:name=".HistoryActivity"
+            android:exported="false" />
         <activity
             android:name=".CartActivity"
             android:exported="false" />

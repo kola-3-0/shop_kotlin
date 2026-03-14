@@ -25,6 +25,6 @@ class HistoryActivity : AppCompatActivity() {
      val items = HistoryStorage.all()
 
      rv.layoutManager = LinearLayoutManager(this)
-     rv.adapter = HistoryActivity(items)
+     rv.adapter = HistoryAdapter(items)
 }
 }
