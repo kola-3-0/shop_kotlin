@@ -5,7 +5,7 @@
     android:id="@+id/second"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#E0E3EF"
+    android:background="@color/background_main"
     android:orientation="vertical"
     android:padding="16dp"
     >
@@ -16,7 +16,7 @@
         android:layout_height="wrap_content"
         app:title="каталог"
         android:elevation="4dp"
-        android:background="#501D1D"
+        android:background="#9DF0A1"
     />
 
 
@@ -26,6 +26,7 @@
         android:layout_height="match_parent"
         android:divider="@null"
         android:dividerHeight="0dp"
+        android:background="@color/white"
         />
 
     <androidx.recyclerview.widget.RecyclerView

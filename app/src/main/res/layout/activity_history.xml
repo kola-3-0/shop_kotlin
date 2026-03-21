@@ -4,7 +4,7 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:padding="20dp"
-    android:background="#501D1D">
+    android:background="@color/background_main">
 
     <TextView
         android:id="@+id/tvHistoryTitly"
@@ -14,6 +14,7 @@
         android:textSize="24dp"
         android:textAlignment="center"
         android:layout_marginBottom="15dp"
+        android:background="#9DF0A1"
         />
 
     <androidx.recyclerview.widget.RecyclerView

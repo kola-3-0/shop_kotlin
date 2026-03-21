@@ -4,7 +4,7 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:padding="20dp"
-    android:background="#F4F3D5">
+    android:background="@color/background_main">
 
     <TextView
         android:id="@+id/tvCartTitle"
@@ -14,7 +14,8 @@
         android:textStyle="bold"
         android:textSize="24sp"
         android:textAlignment="center"
-        android:layout_marginBottom="15dp"/>
+        android:layout_marginBottom="15dp"
+        android:textColor="@color/black"/>
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/tvCartList"
@@ -28,6 +29,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="ИТОГО: 0"
+        android:textColor="@color/black"
         android:textSize="30sp"
         android:paddingBottom="12dp"
         android:paddingTop="12dp"/>
@@ -36,7 +38,8 @@
         android:id="@+id/btnMakeOrder"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="ОФОРМИТЬ ЗАКАЗ"/>
+        android:text="ОФОРМИТЬ ЗАКАЗ"
+        android:backgroundTint="#FB4654"/>
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -47,14 +50,18 @@
     android:layout_width="0dp"
             android:layout_weight="1"
     android:layout_height="wrap_content"
-    android:text="ОЧИСТИТЬ КОРЗИНУ"/>
+    android:text="ОЧИСТИТЬ КОРЗИНУ"
+            android:textColor="@color/black"
+            android:backgroundTint="#9DF0A1"/>
 
         <Button
             android:id="@+id/btnOoenHistory"
             android:layout_width="0dp"
             android:layout_weight="1"
             android:layout_height="wrap_content"
-            android:text="ОТКРЫТЬ ИСТОРИЮ"/>
+            android:text="ОТКРЫТЬ ИСТОРИЮ"
+            android:textColor="@color/black"
+            android:backgroundTint="#9DF0A1"/>
 </LinearLayout>
 
 
