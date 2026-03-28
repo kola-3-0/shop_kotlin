@@ -17,6 +17,7 @@ class MainActivity : AppCompatActivity() {
         enableEdgeToEdge()
         setContentView(R.layout.activity_main)
         HistoryStorage.init(this)
+        FavoriteStorage.init(this)
 
         CartStorage.init(this)
         val btnStart = findViewById<Button>( R.id.buttonStart)
