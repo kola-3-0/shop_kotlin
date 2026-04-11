@@ -60,6 +60,17 @@
             />
 
         <Button
+            android:id="@+id/favorButton"
+            android:layout_width="200dp"
+            android:layout_height="50dp"
+            android:layout_marginBottom="32dp"
+            android:backgroundTint="#FB4654"
+            android:text="В ИЗБРАННЫЕ"
+            android:textColor="#501D1D"
+            android:textSize="18sp"
+            android:textStyle="bold" />
+
+        <Button
             android:id="@+id/backButton"
             android:layout_width="200dp"
             android:layout_height="50dp"

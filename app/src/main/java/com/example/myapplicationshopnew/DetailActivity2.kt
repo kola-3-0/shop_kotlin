@@ -2,6 +2,8 @@ package com.example.myapplicationshopnew
 
 import Product
 import android.os.Bundle
+import android.view.MotionEvent
+import android.view.animation.AnimationUtils
 import android.widget.Button
 import android.widget.ImageView
 import android.widget.TextView
@@ -32,25 +34,97 @@ class DetailActivity2 : AppCompatActivity() {
         val detailDescription = findViewById<TextView>(R.id.detailDescription)
         val buyButton = findViewById<Button>(R.id.buyButton)
         val backButton = findViewById<Button>(R.id.backButton)
+        val favorButton = findViewById<Button>(R.id.favorButton)
 
         detailImage.setImageResource(productImageRes)
         detailName.text = productName
         detailPrice.text = "$productPrice $"
         detailDescription.text = productDescription
 
+        detailImage.startAnimation(AnimationUtils.loadAnimation(this, R.anim.fade))
+        detailName.startAnimation(AnimationUtils.loadAnimation(this, R.anim.fade))
+        detailPrice.startAnimation(AnimationUtils.loadAnimation(this, R.anim.fade))
+        detailDescription.startAnimation(AnimationUtils.loadAnimation(this, R.anim.fade))
+
         buyButton.setOnClickListener {
-            val one_new_prodect = Product(id = productId,
-                                          name = productName,
-                                          price = productPrice,
-                                          description = productDescription,
-                                          ImageRes = productImageRes  )
+            val one_new_prodect = Product(
+                id = productId,
+                name = productName,
+                price = productPrice,
+                description = productDescription,
+                ImageRes = productImageRes
+            )
             CartStorage.add_item(this, new_item = one_new_prodect)
             Toast.makeText(this, "товар $productName добавлен в корзину!", Toast.LENGTH_SHORT)
                 .show()
         }
+        buyButton.setOnTouchListener { v, event ->
+            if (event.action == MotionEvent.ACTION_DOWN){
+                v.startAnimation(AnimationUtils.loadAnimation(v.context, R.anim.scale_down))
+            }
+
+            if (event.action == MotionEvent.ACTION_UP){
+                v.startAnimation(AnimationUtils.loadAnimation(v.context, R.anim.scale_up))
+            }
+
+            if (event.action == MotionEvent.ACTION_CANCEL){
+                v.startAnimation(AnimationUtils.loadAnimation(v.context, R.anim.scale_up))
+            }
+
+            false
+        }
 
         backButton.setOnClickListener {
             finish()
+        }
+        backButton.setOnTouchListener { v, event ->
+            if (event.action == MotionEvent.ACTION_DOWN){
+                v.startAnimation(AnimationUtils.loadAnimation(v.context, R.anim.scale_down))
+            }
+
+            if (event.action == MotionEvent.ACTION_UP){
+                v.startAnimation(AnimationUtils.loadAnimation(v.context, R.anim.scale_up))
+            }
+
+            if (event.action == MotionEvent.ACTION_CANCEL){
+                v.startAnimation(AnimationUtils.loadAnimation(v.context, R.anim.scale_up))
+            }
+
+            false
+        }
+        favorButton.setOnClickListener {
+            val one_new_prodect = Product(
+                id = productId,
+                name = productName,
+                price = productPrice,
+                description = productDescription,
+                ImageRes = productImageRes
+            )
+            val addet = FavoriteStorage.add_item(this, new_item = one_new_prodect)
+            if (addet == true) {
+                Toast.makeText(this, "товар $productName добавлен в избранные!", Toast.LENGTH_SHORT)
+                    .show()
+
+                if (addet == false) {
+                    Toast.makeText(this, "товар $productName добавлен ранее", Toast.LENGTH_SHORT)
+                        .show()
+                }
+            }
+        }
+        favorButton.setOnTouchListener { v, event ->
+            if (event.action == MotionEvent.ACTION_DOWN){
+                v.startAnimation(AnimationUtils.loadAnimation(v.context, R.anim.scale_down))
+            }
+
+            if (event.action == MotionEvent.ACTION_UP){
+                v.startAnimation(AnimationUtils.loadAnimation(v.context, R.anim.scale_up))
+            }
+
+            if (event.action == MotionEvent.ACTION_CANCEL){
+                v.startAnimation(AnimationUtils.loadAnimation(v.context, R.anim.scale_up))
+            }
+
+            false
         }
     }
 }

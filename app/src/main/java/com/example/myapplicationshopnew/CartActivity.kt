@@ -3,6 +3,8 @@ package com.example.myapplicationshopnew
 import android.content.Intent
 import android.os.Bundle
 import android.os.RecoverySystem
+import android.view.MotionEvent
+import android.view.animation.AnimationUtils
 import android.widget.Button
 import android.widget.TextView
 import android.widget.Toast
@@ -46,9 +48,39 @@ class CartActivity : AppCompatActivity() {
             rv.adapter = CartAdapter(emptyList())
             tvTotal.text = "ИТОГО: 0"
         }
+        btnClear.setOnTouchListener { v, event ->
+            if (event.action == MotionEvent.ACTION_DOWN){
+                v.startAnimation(AnimationUtils.loadAnimation(v.context, R.anim.scale_down))
+            }
+
+            if (event.action == MotionEvent.ACTION_UP){
+                v.startAnimation(AnimationUtils.loadAnimation(v.context, R.anim.scale_up))
+            }
+
+            if (event.action == MotionEvent.ACTION_CANCEL){
+                v.startAnimation(AnimationUtils.loadAnimation(v.context, R.anim.scale_up))
+            }
+
+            false
+        }
         //6
         btnOpenHistory.setOnClickListener {
             startActivity(Intent(this, HistoryActivity::class.java))
+        }
+        btnOpenHistory.setOnTouchListener { v, event ->
+            if (event.action == MotionEvent.ACTION_DOWN){
+                v.startAnimation(AnimationUtils.loadAnimation(v.context, R.anim.scale_down))
+            }
+
+            if (event.action == MotionEvent.ACTION_UP){
+                v.startAnimation(AnimationUtils.loadAnimation(v.context, R.anim.scale_up))
+            }
+
+            if (event.action == MotionEvent.ACTION_CANCEL){
+                v.startAnimation(AnimationUtils.loadAnimation(v.context, R.anim.scale_up))
+            }
+
+            false
         }
         //7
         btrMakeOrder.setOnClickListener {
@@ -93,6 +125,21 @@ class CartActivity : AppCompatActivity() {
 
 
 
+        }
+        btrMakeOrder.setOnTouchListener { v, event ->
+            if (event.action == MotionEvent.ACTION_DOWN){
+                v.startAnimation(AnimationUtils.loadAnimation(v.context, R.anim.scale_down))
+            }
+
+            if (event.action == MotionEvent.ACTION_UP){
+                v.startAnimation(AnimationUtils.loadAnimation(v.context, R.anim.scale_up))
+            }
+
+            if (event.action == MotionEvent.ACTION_CANCEL){
+                v.startAnimation(AnimationUtils.loadAnimation(v.context, R.anim.scale_up))
+            }
+
+            false
         }
 
 

@@ -8,7 +8,11 @@ import android.view.ViewGroup
 import android.widget.Button
 import android.widget.ImageView
 import android.widget.TextView
+import android.view.MotionEvent
+import android.view.animation.AnimationUtils
+import androidx.constraintlayout.widget.ConstraintSet
 import androidx.recyclerview.widget.RecyclerView
+
 
 class ProductGridAdapter(
     private val context: android.content.Context,
@@ -37,6 +41,8 @@ class ProductGridAdapter(
         holder.name.text = product.name
         holder.price.text = "${product.price} $"
 
+        holder.itemView.startAnimation(AnimationUtils.loadAnimation(holder.itemView.context, R.anim.item_appear))
+
         holder.button.setOnClickListener {
             val intent = Intent(context, DetailActivity2::class.java).apply {
                 putExtra("id", product.id)
@@ -48,6 +54,22 @@ class ProductGridAdapter(
             }
             context.startActivity(intent)
         }
+        holder.button.setOnTouchListener { v, event ->
+            if (event.action == MotionEvent.ACTION_DOWN){
+                v.startAnimation(AnimationUtils.loadAnimation(v.context, R.anim.scale_down))
+            }
+
+            if (event.action == MotionEvent.ACTION_UP){
+                v.startAnimation(AnimationUtils.loadAnimation(v.context, R.anim.scale_up))
+            }
+
+            if (event.action == MotionEvent.ACTION_CANCEL){
+                v.startAnimation(AnimationUtils.loadAnimation(v.context, R.anim.scale_up))
+            }
+
+            false
+        }
+
 
     }
 
