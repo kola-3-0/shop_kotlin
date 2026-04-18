@@ -3,6 +3,25 @@
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <item
+        android:id="@+id/action_sort"
+        android:title="сортировка"
+        android:icon="@drawable/sort"
+        app:showAsAction="always">
+
+        <menu>
+           <item android:id="@+id/default_sort"
+            android:title="по умолчанию"/>
+
+            <item android:id="@+id/asc_sort"
+                android:title="по убыванию"/>
+
+            <item android:id="@+id/dese_sort"
+                android:title="по возрастанию"/>
+
+        </menu>
+    </item>
+
+    <item
         android:id="@+id/action_favorite"
         android:title="избранные"
         android:icon="@drawable/fav"
